@@ -1,0 +1,273 @@
+<!DOCTYPE html>
+<html lang="hr">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Prestani kretati iz početka — Benjamin Matošević</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=DM+Sans:ital,wght@0,300;0,400;0,500;0,600;1,300;1,400&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="styles.css">
+</head>
+<body data-page="landing1">
+
+<!-- NAV -->
+<nav class="navbar">
+  <a href="index.html" class="nav-logo">BM<span>.</span>FIT</a>
+  <div class="nav-right">
+    <a href="https://docs.google.com/forms/d/e/1FAIpQLScnJDEQVlFEhk-koc2gcXhn-hjRreWlEOHAmLvCTcqEg4mydQ/viewform?utm_source=ig&utm_medium=social&utm_content=link_in_bio&fbclid=PAcGRvZgJleHRuA2FlbQIxMQBzcnRjBmFwcF9pZA8xMjQwMjQ1NzQyODc0MTQAAacUvVOSarQlzyG9PNxuKdeiiQ8mGCB0ZhPKJL48opjQ6WvoOWrEV8tGcLYqTA_aem_jbW3LNW-bsXS3pfkGlYYJA" target="_blank" rel="noopener" class="nav-cta" data-i18n="l1_hero_cta">Prijavi se</a>
+    <button class="nav-burger" id="navBurger" aria-label="Izbornik" aria-expanded="false" aria-controls="sideMenu">
+      <span></span><span></span><span></span>
+    </button>
+  </div>
+</nav>
+
+<!-- SIDE MENU -->
+<div class="menu-overlay" id="menuOverlay"></div>
+<aside class="side-menu" id="sideMenu" aria-hidden="true">
+  <div class="side-menu-header">
+    <span class="side-menu-title" data-i18n="menu_title">Izbornik</span>
+    <button class="side-menu-close" id="menuClose" aria-label="Zatvori">&times;</button>
+  </div>
+  <nav class="side-menu-nav">
+    <a href="index.html#program"><span class="side-menu-num">01</span><span data-i18n="nav_program">Program</span></a>
+    <a href="index.html#testimonials"><span class="side-menu-num">02</span><span data-i18n="nav_results">Rezultati</span></a>
+    <a href="index.html#quiz"><span class="side-menu-num">03</span><span data-i18n="nav_quiz">Kviz</span></a>
+    <a href="faq.html"><span class="side-menu-num">04</span><span data-i18n="nav_faq">FAQ</span></a>
+    <a href="https://docs.google.com/forms/d/e/1FAIpQLScnJDEQVlFEhk-koc2gcXhn-hjRreWlEOHAmLvCTcqEg4mydQ/viewform?utm_source=ig&utm_medium=social&utm_content=link_in_bio&fbclid=PAcGRvZgJleHRuA2FlbQIxMQBzcnRjBmFwcF9pZA8xMjQwMjQ1NzQyODc0MTQAAacUvVOSarQlzyG9PNxuKdeiiQ8mGCB0ZhPKJL48opjQ6WvoOWrEV8tGcLYqTA_aem_jbW3LNW-bsXS3pfkGlYYJA" target="_blank" rel="noopener" class="side-menu-cta" data-i18n="l1_hero_cta">Prijavi se</a>
+  </nav>
+  <div class="side-menu-footer">
+    <div class="lang-switch">
+      <button class="lang-btn active" data-lang="hr">HR</button>
+      <button class="lang-btn" data-lang="en">EN</button>
+    </div>
+    <p class="side-menu-note" data-i18n="menu_note">Benjamin Matošević — Osobni trener i online mentor za žene 25+.</p>
+  </div>
+</aside>
+
+<!-- HERO -->
+<section id="l1-hero">
+  <div class="container">
+    <div class="l1-hero-inner">
+      <h1 class="l1-hero-headline reveal" data-i18n-html="l1_hero_headline">
+        Prestani ponovno kretati<br>stalno iz početka.<br>
+        Izgradi <em>tijelo i navike</em><br>koje ćeš održati cijeli život.
+      </h1>
+      <p class="l1-hero-sub reveal reveal-delay-2" data-i18n="l1_hero_sub">
+        Individualno online mentorstvo za žene koje su već probale dijete, treninge i razne planove, ali im je uvijek falio sustav, podrška i netko tko ih vodi.
+      </p>
+      <div class="l1-hero-cta reveal reveal-delay-3">
+        <a href="https://docs.google.com/forms/d/e/1FAIpQLScnJDEQVlFEhk-koc2gcXhn-hjRreWlEOHAmLvCTcqEg4mydQ/viewform?utm_source=ig&utm_medium=social&utm_content=link_in_bio&fbclid=PAcGRvZgJleHRuA2FlbQIxMQBzcnRjBmFwcF9pZA8xMjQwMjQ1NzQyODc0MTQAAacUvVOSarQlzyG9PNxuKdeiiQ8mGCB0ZhPKJL48opjQ6WvoOWrEV8tGcLYqTA_aem_jbW3LNW-bsXS3pfkGlYYJA"
+           target="_blank" rel="noopener" class="btn-primary" data-i18n="l1_hero_cta">Prijavi se</a>
+        <span class="l1-hero-cta-note" data-i18n="l1_hero_cta_note">Kratka prijava · bez obveze</span>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- HOOK - video (first 30 seconds) -->
+<section id="l1-hook">
+  <div class="container">
+    <h2 class="l1-hook-headline reveal" data-i18n-html="l1_hook_headline">Pogledaj ovo<br><em>prije svega ostalog.</em></h2>
+    <p class="l1-hook-sub reveal reveal-delay-2" data-i18n="l1_hook_sub">U 30 sekundi ti objasnim zašto dosad nije išlo i što u mom pristupu radimo drugačije.</p>
+    <div class="vsl-video-wrap reveal reveal-delay-3">
+      <div class="vsl-video">
+        <div class="img-placeholder">
+          <div class="img-placeholder-icon">&#9654;</div>
+          <span data-i18n="l1_hook_video_label">Video, prvih 30 sekundi<br>Benjamin Matošević</span>
+        </div>
+        <div class="vsl-play-btn"><div class="vsl-play-icon"></div></div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- RECOGNIZE -->
+<section id="l1-recognize">
+  <div class="container">
+    <div class="l1-recognize-inner">
+      <div class="l1-recognize-head reveal">
+        <h2 class="l1-recognize-headline" data-i18n-html="l1_rec_headline">Ako kimaš glavom<br>na barem jedno,<br><em>na pravom si mjestu.</em></h2>
+      </div>
+      <ul class="l1-checklist reveal reveal-delay-1">
+        <li><span class="l1-check"><svg class="l1-check-svg" viewBox="0 0 24 24" aria-hidden="true"><path pathLength="1" d="M5.5 12.5l4.2 4.2L18.5 7.3"/></svg></span><span data-i18n="l1_rec_1">Kažeš „od ponedjeljka krećem" češće nego što želiš priznati.</span></li>
+        <li><span class="l1-check"><svg class="l1-check-svg" viewBox="0 0 24 24" aria-hidden="true"><path pathLength="1" d="M5.5 12.5l4.2 4.2L18.5 7.3"/></svg></span><span data-i18n="l1_rec_2">Izdržiš 2–4 tjedna, pa te život i obaveze izbace iz ritma.</span></li>
+        <li><span class="l1-check"><svg class="l1-check-svg" viewBox="0 0 24 24" aria-hidden="true"><path pathLength="1" d="M5.5 12.5l4.2 4.2L18.5 7.3"/></svg></span><span data-i18n="l1_rec_3">Navečer, nakon stresnog dana, jedeš iako nisi fizički gladna.</span></li>
+        <li><span class="l1-check"><svg class="l1-check-svg" viewBox="0 0 24 24" aria-hidden="true"><path pathLength="1" d="M5.5 12.5l4.2 4.2L18.5 7.3"/></svg></span><span data-i18n="l1_rec_4">Probala si dijete, grupne treninge i aplikacije, a opet se vratiš na isto.</span></li>
+        <li><span class="l1-check"><svg class="l1-check-svg" viewBox="0 0 24 24" aria-hidden="true"><path pathLength="1" d="M5.5 12.5l4.2 4.2L18.5 7.3"/></svg></span><span data-i18n="l1_rec_5">Ne treba ti još informacija, treba ti netko tko će te voditi.</span></li>
+      </ul>
+    </div>
+  </div>
+</section>
+
+<!-- WHY IT FAILED -->
+<section id="l1-why">
+  <div class="container">
+    <div class="l1-why-head reveal">
+      <h2 class="l1-why-headline" data-i18n-html="l1_why_headline">Problem nije u motivaciji,<br><em>nego u tome što nemaš jasan plan.</em></h2>
+    </div>
+    <div class="l1-why-grid">
+      <div class="l1-why-card reveal reveal-delay-1">
+        <div class="l1-why-num">01</div>
+        <h3 data-i18n="l1_why_1_t">Prestroge dijete</h3>
+        <p data-i18n="l1_why_1_d">Smršaviš → vratiš sve → izgubiš povjerenje u sebe.</p>
+      </div>
+      <div class="l1-why-card reveal reveal-delay-2">
+        <div class="l1-why-num">02</div>
+        <h3 data-i18n="l1_why_2_t">Programi bez podrške</h3>
+        <p data-i18n="l1_why_2_d">Dobiješ plan → nemaš kome odgovarati → odustaneš.</p>
+      </div>
+      <div class="l1-why-card reveal reveal-delay-3">
+        <div class="l1-why-num">03</div>
+        <h3 data-i18n="l1_why_3_t">Sve ili ništa mentalitet</h3>
+        <p data-i18n="l1_why_3_d">Jedan loš dan i cijeli plan padne u vodu.</p>
+      </div>
+    </div>
+    <p class="l1-why-foot reveal" data-i18n="l1_why_foot">…i stalno krećeš iz početka.</p>
+  </div>
+</section>
+
+<!-- MECHANISM -->
+<section id="l1-mechanism">
+  <div class="container">
+    <div class="l1-mech-head reveal">
+      <h2 class="l1-mech-headline" data-i18n-html="l1_mech_headline">Moje vođenje,<br><em>dok ne dođeš do cilja.</em></h2>
+    </div>
+    <div class="l1-mech-steps reveal">
+      <div class="l1-mech-step">
+        <div class="l1-mech-num">1</div>
+        <div class="l1-mech-body">
+          <h3 data-i18n="l1_mech_1_t">Personalizacija</h3>
+          <p data-i18n="l1_mech_1_d">Upoznajemo tvoje navike, obaveze i stil života. Plan počinje od tebe, ne od šablone.</p>
+        </div>
+      </div>
+      <div class="l1-mech-step">
+        <div class="l1-mech-num">2</div>
+        <div class="l1-mech-body">
+          <h3 data-i18n="l1_mech_2_t">Implementacija</h3>
+          <p data-i18n="l1_mech_2_d">Dobiješ jednostavan plan treninga i prehrane koji se uklapa u tvoj život, a ne obratno.</p>
+        </div>
+      </div>
+      <div class="l1-mech-step">
+        <div class="l1-mech-num">3</div>
+        <div class="l1-mech-body">
+          <h3 data-i18n="l1_mech_3_t">Kontrola i prilagodba</h3>
+          <p data-i18n="l1_mech_3_d">Tjedno pratimo napredak, prilagođavamo plan i rješavamo prepreke koje se pojave putem.</p>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- OUTCOMES -->
+<section id="l1-outcomes">
+  <div class="container">
+    <div class="l1-outcomes-inner reveal">
+      <div class="l1-outcomes-copy">
+        <h2 class="l1-outcomes-headline" data-i18n-html="l1_out_headline">Ovo je puno jače<br><em>od „minus 10 kg".</em></h2>
+      </div>
+      <ul class="l1-outcomes-list">
+        <li><span class="l1-out-dot"></span><span data-i18n="l1_out_1">Opet obući stare traperice.</span></li>
+        <li><span class="l1-out-dot"></span><span data-i18n="l1_out_2">Nositi kupaći bez srama.</span></li>
+        <li><span class="l1-out-dot"></span><span data-i18n="l1_out_3">Imati više energije za djecu.</span></li>
+        <li><span class="l1-out-dot"></span><span data-i18n="l1_out_4">Prestati da hrana upravlja tobom.</span></li>
+      </ul>
+    </div>
+  </div>
+</section>
+
+<!-- FAQ (personalities) -->
+<section id="l1-faq">
+  <div class="container">
+    <div class="l1-faq-head reveal">
+      <h2 class="l1-faq-headline" data-i18n-html="l1_faq_headline">Sve što te zanima,<br><em>iskreno.</em></h2>
+    </div>
+    <div class="l1-faq-grid">
+      <div class="l1-gem-card reveal reveal-delay-1">
+        <div class="l1-gem-top">
+          <span class="l1-gem-icon">&#9670;</span>
+          <span class="l1-gem-name">Ruby</span>
+          <span class="l1-gem-word" data-i18n="l1_faq_ruby_w">ŠTO?</span>
+        </div>
+        <h3 class="l1-gem-q" data-i18n="l1_faq_ruby_q">Što točno dobivam?</h3>
+        <ul class="l1-gem-list">
+          <li data-i18n="l1_faq_ruby_1">Individualni plan treninga</li>
+          <li data-i18n="l1_faq_ruby_2">Prehrambene smjernice</li>
+          <li data-i18n="l1_faq_ruby_3">Tjedni check-in</li>
+          <li data-i18n="l1_faq_ruby_4">Podršku kad zapneš</li>
+          <li data-i18n="l1_faq_ruby_5">Korekcije plana kroz proces</li>
+        </ul>
+      </div>
+      <div class="l1-gem-card reveal reveal-delay-2">
+        <div class="l1-gem-top">
+          <span class="l1-gem-icon">&#9670;</span>
+          <span class="l1-gem-name">Sapphire</span>
+          <span class="l1-gem-word" data-i18n="l1_faq_sapphire_w">ZAŠTO?</span>
+        </div>
+        <h3 class="l1-gem-q" data-i18n="l1_faq_sapphire_q">Zašto bih vjerovala da će ovaj put biti drugačije?</h3>
+        <p class="l1-gem-a" data-i18n="l1_faq_sapphire_a">Jer ne pokušavamo napraviti savršen plan. Radimo sustav koji funkcionira i kada imaš posao, djecu, stres i loše dane.</p>
+      </div>
+      <div class="l1-gem-card reveal reveal-delay-1">
+        <div class="l1-gem-top">
+          <span class="l1-gem-icon">&#9670;</span>
+          <span class="l1-gem-name">Emerald</span>
+          <span class="l1-gem-word" data-i18n="l1_faq_emerald_w">KAKO?</span>
+        </div>
+        <h3 class="l1-gem-q" data-i18n="l1_faq_emerald_q">Kako izgleda moj dan?</h3>
+        <ul class="l1-gem-list">
+          <li data-i18n="l1_faq_emerald_1">Konkretan primjer treninga</li>
+          <li data-i18n="l1_faq_emerald_2">Primjer obroka koji ti odgovara</li>
+          <li data-i18n="l1_faq_emerald_3">Tjedni check-in napretka</li>
+          <li data-i18n="l1_faq_emerald_4">Stalna komunikacija kad ti treba</li>
+        </ul>
+      </div>
+      <div class="l1-gem-card reveal reveal-delay-2">
+        <div class="l1-gem-top">
+          <span class="l1-gem-icon">&#9670;</span>
+          <span class="l1-gem-name">Pearl</span>
+          <span class="l1-gem-word" data-i18n="l1_faq_pearl_w">TKO?</span>
+        </div>
+        <h3 class="l1-gem-q" data-i18n="l1_faq_pearl_q">Okej, ali je li ovo stvarno za mene?</h3>
+        <ul class="l1-gem-list">
+          <li data-i18n="l1_faq_pearl_1">Žena umorna od stalnog vraćanja na početak</li>
+          <li data-i18n="l1_faq_pearl_2">Žena koja je probala planove, ali nije imala podršku</li>
+          <li data-i18n="l1_faq_pearl_3">Žena koja želi ponovno vjerovati sebi i svom tijelu</li>
+          <li data-i18n="l1_faq_pearl_4">Žena kojoj treba vođenje i sigurnost, a ne još jedan plan</li>
+        </ul>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- FINAL CTA -->
+<section id="l1-cta">
+  <div class="container">
+    <h2 class="l1-cta-headline reveal" data-i18n-html="l1_cta_headline">Spremna prestati<br><em>kretati iz početka?</em></h2>
+    <p class="l1-cta-sub reveal reveal-delay-2" data-i18n="l1_cta_sub">Ispuni kratku prijavu. Ako vidim da ti mogu pomoći, javljam ti se i dogovaramo prvi razgovor, bez obveze.</p>
+    <div class="l1-cta-row reveal reveal-delay-3">
+      <a href="https://docs.google.com/forms/d/e/1FAIpQLScnJDEQVlFEhk-koc2gcXhn-hjRreWlEOHAmLvCTcqEg4mydQ/viewform?utm_source=ig&utm_medium=social&utm_content=link_in_bio&fbclid=PAcGRvZgJleHRuA2FlbQIxMQBzcnRjBmFwcF9pZA8xMjQwMjQ1NzQyODc0MTQAAacUvVOSarQlzyG9PNxuKdeiiQ8mGCB0ZhPKJL48opjQ6WvoOWrEV8tGcLYqTA_aem_jbW3LNW-bsXS3pfkGlYYJA"
+         target="_blank" rel="noopener" class="btn-primary" data-i18n="l1_cta_btn">Prijavi se</a>
+    </div>
+    <div class="l1-cta-disclaimer reveal reveal-delay-4" data-i18n="l1_cta_disclaimer">Bez pritiska. Bez obveze. Samo iskren razgovor o tvom cilju.</div>
+  </div>
+</section>
+
+<!-- FOOTER -->
+<footer>
+  <div class="container">
+    <div class="footer-inner">
+      <a href="index.html" class="footer-logo">BM<span>.</span>FIT</a>
+      <ul class="footer-links">
+        <li><a href="index.html#program" data-i18n="nav_program">Program</a></li>
+        <li><a href="index.html#testimonials" data-i18n="nav_results">Rezultati</a></li>
+        <li><a href="index.html#quiz" data-i18n="nav_quiz">Kviz</a></li>
+        <li><a href="faq.html" data-i18n="nav_faq">FAQ</a></li>
+      </ul>
+      <div class="footer-copy" data-i18n="footer_copy">© 2026 Benjamin Matošević. Sva prava pridržana.</div>
+    </div>
+  </div>
+</footer>
+
+<script src="script.js"></script>
+</body>
+</html>

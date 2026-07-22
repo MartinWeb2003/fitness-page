@@ -589,6 +589,312 @@ footer { background: var(--off-black); border-top: 1px solid rgba(255,255,255,0.
 .quiz-success-text { font-size: 14px; color: rgba(245,245,245,0.5); line-height: 1.7; margin-bottom: 24px; }
 .quiz-success .btn-primary { font-size: 13px; }
 
+/* ============================================================
+   LANDING 1  (/landing1)
+   Same tokens as the rest of the site — only the layouts differ.
+   ============================================================ */
+
+/* HERO — centred VSL-style, distinct from the split index hero */
+#l1-hero {
+  min-height: 92vh;
+  padding: 160px 0 100px;
+  display: flex; align-items: center;
+  background: var(--black); overflow: hidden;
+}
+#l1-hero::before {
+  content: '';
+  position: absolute; top: -220px; left: 50%;
+  transform: translateX(-50%);
+  width: 900px; height: 700px;
+  background: radial-gradient(ellipse at center, rgba(212,17,17,0.14) 0%, transparent 68%);
+  pointer-events: none;
+}
+.l1-hero-inner { max-width: 860px; margin: 0 auto; text-align: center; position: relative; z-index: 1; }
+.l1-hero-headline {
+  font-family: var(--display);
+  font-size: clamp(44px, 6vw, 82px);
+  line-height: 0.98; letter-spacing: 1px;
+  color: var(--white); margin-bottom: 28px;
+}
+.l1-hero-sub {
+  font-size: 17px; line-height: 1.75;
+  color: rgba(245,245,245,0.6);
+  max-width: 620px; margin: 0 auto 44px;
+}
+.l1-hero-cta { display: flex; flex-direction: column; align-items: center; gap: 16px; }
+.l1-hero-cta-note {
+  font-size: 12px; letter-spacing: 1.5px; text-transform: uppercase;
+  color: rgba(245,245,245,0.35);
+}
+
+/* HOOK — video section (first 30 seconds). Reuses the .vsl-video* player. */
+#l1-hook { padding: 110px 0; background: var(--off-black); border-top: 1px solid rgba(255,255,255,0.06); text-align: center; }
+.l1-hook-headline {
+  font-family: var(--display);
+  font-size: clamp(34px, 4vw, 58px);
+  line-height: 0.98; letter-spacing: 1px; margin-bottom: 18px;
+}
+.l1-hook-sub {
+  font-size: 16px; line-height: 1.7;
+  color: rgba(245,245,245,0.55);
+  max-width: 560px; margin: 0 auto 44px;
+}
+
+/* RECOGNIZE — sticky heading + checklist */
+#l1-recognize { padding: 120px 0; background: var(--black); border-top: 1px solid rgba(255,255,255,0.06); }
+.l1-recognize-inner { display: grid; grid-template-columns: 1fr 1.3fr; gap: 72px; align-items: start; }
+.l1-recognize-headline {
+  font-family: var(--display);
+  font-size: clamp(34px, 3.6vw, 54px);
+  line-height: 0.98; letter-spacing: 1px;
+  position: sticky; top: 120px;
+}
+.l1-checklist { list-style: none; display: flex; flex-direction: column; gap: 0; }
+/* The <ul> only triggers the observer; each row runs its own entrance. */
+.l1-checklist.reveal { opacity: 1; transform: none; }
+.l1-checklist li {
+  display: flex; align-items: flex-start; gap: 18px;
+  padding: 22px 0;
+  border-bottom: 1px solid rgba(255,255,255,0.07);
+  font-size: 16px; line-height: 1.6; color: rgba(245,245,245,0.78);
+  /* Each item fades in from the left, staggered once the list is on screen. */
+  opacity: 0; transform: translateX(-36px);
+  transition: opacity .55s ease, transform .55s cubic-bezier(.2,.7,.2,1);
+}
+.l1-checklist.visible li { opacity: 1; transform: none; }
+.l1-checklist.visible li:nth-child(1) { transition-delay: .05s; }
+.l1-checklist.visible li:nth-child(2) { transition-delay: .18s; }
+.l1-checklist.visible li:nth-child(3) { transition-delay: .31s; }
+.l1-checklist.visible li:nth-child(4) { transition-delay: .44s; }
+.l1-checklist.visible li:nth-child(5) { transition-delay: .57s; }
+.l1-checklist li:first-child { border-top: 1px solid rgba(255,255,255,0.07); }
+.l1-check {
+  position: relative; flex-shrink: 0;
+  width: 22px; height: 22px; margin-top: 2px;
+  border: 1.5px solid var(--red); border-radius: 3px;
+  background: rgba(212,17,17,0.1);
+  display: flex; align-items: center; justify-content: center;
+}
+.l1-check-svg { width: 15px; height: 15px; display: block; overflow: visible; }
+/* pathLength="1" lets the dash math ignore the path's real length. */
+.l1-check-svg path {
+  fill: none; stroke: var(--red); stroke-width: 2.6;
+  stroke-linecap: round; stroke-linejoin: round;
+  stroke-dasharray: 1; stroke-dashoffset: 1;
+}
+/* Checkmark draws itself just after its row has slid in. */
+.l1-checklist.visible li .l1-check-svg path { animation: l1-draw-check .4s ease forwards; }
+.l1-checklist.visible li:nth-child(1) .l1-check-svg path { animation-delay: .30s; }
+.l1-checklist.visible li:nth-child(2) .l1-check-svg path { animation-delay: .43s; }
+.l1-checklist.visible li:nth-child(3) .l1-check-svg path { animation-delay: .56s; }
+.l1-checklist.visible li:nth-child(4) .l1-check-svg path { animation-delay: .69s; }
+.l1-checklist.visible li:nth-child(5) .l1-check-svg path { animation-delay: .82s; }
+@keyframes l1-draw-check { to { stroke-dashoffset: 0; } }
+
+/* WHY — 3 numbered problem cards */
+#l1-why { padding: 120px 0; background: var(--off-black); border-top: 1px solid rgba(255,255,255,0.06); text-align: center; }
+.l1-why-head { margin-bottom: 56px; }
+.l1-why-headline {
+  font-family: var(--display);
+  font-size: clamp(34px, 4vw, 58px);
+  line-height: 0.98; letter-spacing: 1px;
+  max-width: 760px; margin: 0 auto;
+}
+/* perspective gives the flip its depth; all three cards share one vanishing point. */
+.l1-why-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 20px; text-align: left; perspective: 1300px; }
+.l1-why-card {
+  background: var(--dark-gray);
+  border: 1px solid rgba(255,255,255,0.08);
+  border-radius: 4px; padding: 36px 32px;
+  position: relative; overflow: hidden;
+  /* Hinged at the top edge: starts folded back, flips down flat into view. */
+  transform-origin: top center;
+  transform: rotateX(-92deg);
+  /* Longhand (no transition-delay) so .reveal-delay-1/2/3 keeps the stagger. */
+  transition-property: transform, opacity;
+  transition-duration: .8s, .5s;
+  transition-timing-function: cubic-bezier(.2,.75,.25,1), ease;
+  will-change: transform;
+  backface-visibility: hidden;
+}
+.l1-why-card.visible { transform: rotateX(0deg); }
+.l1-why-card::before {
+  content: ''; position: absolute; top: 0; left: 0;
+  width: 3px; height: 100%; background: var(--red);
+}
+.l1-why-num {
+  font-family: var(--display);
+  font-size: 52px; line-height: 1;
+  color: rgba(212,17,17,0.28); margin-bottom: 18px;
+}
+.l1-why-card h3 { font-size: 19px; font-weight: 600; color: var(--white); margin-bottom: 10px; }
+.l1-why-card p { font-size: 14px; line-height: 1.7; color: rgba(245,245,245,0.5); }
+.l1-why-foot {
+  text-align: center; margin-top: 44px;
+  font-family: var(--display); font-size: clamp(24px, 3vw, 38px);
+  letter-spacing: 1px; color: var(--red);
+}
+
+/* MECHANISM — 3 connected steps */
+#l1-mechanism { padding: 120px 0; background: var(--black); border-top: 1px solid rgba(255,255,255,0.06); }
+.l1-mech-head { margin-bottom: 56px; }
+.l1-mech-headline {
+  font-family: var(--display);
+  font-size: clamp(34px, 4vw, 58px);
+  line-height: 0.98; letter-spacing: 1px;
+}
+.l1-mech-steps { display: grid; grid-template-columns: repeat(3, 1fr); gap: 24px; position: relative; }
+/* Container is only the trigger — it stays put while its pieces animate. */
+.l1-mech-steps.reveal { opacity: 1; transform: none; }
+/* Steps centred so the connector runs cleanly through the number centres
+   (num1 ≈ 1/6 of the row, num3 ≈ 5/6). */
+.l1-mech-step { position: relative; z-index: 1; text-align: center; }
+/* Grey base rail spanning num1 → num3. */
+.l1-mech-steps::before {
+  content: ''; position: absolute; top: 28px; left: 16.66%; right: 16.66%;
+  height: 2px; background: rgba(255,255,255,0.14); z-index: 0;
+}
+/* Red fill that grows from num1 to num3 the first time the row is on screen. */
+.l1-mech-steps::after {
+  content: ''; position: absolute; top: 28px; left: 16.66%;
+  width: 0; height: 2px; background: var(--red); z-index: 0;
+}
+.l1-mech-steps.visible::after { animation: l1-mech-fill 1.4s linear forwards; }
+@keyframes l1-mech-fill { to { width: 66.66%; } }
+.l1-mech-num {
+  width: 56px; height: 56px; border-radius: 50%;
+  /* Start grey; each circle turns red as the fill reaches it. */
+  background: var(--mid-gray); color: rgba(245,245,245,0.5);
+  font-family: var(--display); font-size: 30px; line-height: 1;
+  display: flex; align-items: center; justify-content: center;
+  margin: 0 auto 24px; border: 4px solid var(--black);
+}
+/* num1 lights at t=0, num2 when the fill is halfway (0.7s), num3 at the end (1.4s). */
+.l1-mech-steps.visible .l1-mech-step:nth-child(1) .l1-mech-num { animation: l1-mech-lit .45s ease forwards; animation-delay: 0s; }
+.l1-mech-steps.visible .l1-mech-step:nth-child(2) .l1-mech-num { animation: l1-mech-lit .45s ease forwards; animation-delay: .7s; }
+.l1-mech-steps.visible .l1-mech-step:nth-child(3) .l1-mech-num { animation: l1-mech-lit .45s ease forwards; animation-delay: 1.4s; }
+@keyframes l1-mech-lit {
+  0%   { background-color: var(--mid-gray); color: rgba(245,245,245,0.5); transform: scale(1); }
+  60%  { transform: scale(1.12); }
+  100% { background-color: var(--red); color: var(--white); transform: scale(1); }
+}
+.l1-mech-body h3 { font-size: 20px; font-weight: 600; color: var(--white); margin-bottom: 10px; }
+.l1-mech-body p { font-size: 14px; line-height: 1.7; color: rgba(245,245,245,0.55); }
+/* Copy under each number rises in, roughly tracking the fill. */
+.l1-mech-body { opacity: 0; transform: translateY(14px); transition: opacity .5s ease, transform .5s ease; }
+.l1-mech-steps.visible .l1-mech-body { opacity: 1; transform: none; }
+.l1-mech-steps.visible .l1-mech-step:nth-child(1) .l1-mech-body { transition-delay: .15s; }
+.l1-mech-steps.visible .l1-mech-step:nth-child(2) .l1-mech-body { transition-delay: .55s; }
+.l1-mech-steps.visible .l1-mech-step:nth-child(3) .l1-mech-body { transition-delay: .95s; }
+
+/* OUTCOMES — red-tinted band, copy + emotional list */
+#l1-outcomes { padding: 100px 0; background: var(--off-black); border-top: 1px solid rgba(255,255,255,0.06); }
+.l1-outcomes-inner {
+  display: grid; grid-template-columns: 1fr 1fr; gap: 64px; align-items: center;
+  background: linear-gradient(135deg, rgba(212,17,17,0.12), rgba(212,17,17,0.03));
+  border: 1px solid rgba(212,17,17,0.25);
+  border-radius: 6px; padding: clamp(32px, 5vw, 64px);
+}
+.l1-outcomes-headline {
+  font-family: var(--display);
+  font-size: clamp(32px, 3.6vw, 52px);
+  line-height: 0.98; letter-spacing: 1px;
+}
+.l1-outcomes-list { list-style: none; display: flex; flex-direction: column; gap: 18px; }
+.l1-outcomes-list li {
+  display: flex; align-items: center; gap: 16px;
+  font-size: 17px; color: rgba(245,245,245,0.85);
+}
+.l1-out-dot {
+  flex-shrink: 0; width: 26px; height: 26px; border-radius: 50%;
+  background: var(--red); position: relative;
+}
+.l1-out-dot::after {
+  content: ''; position: absolute; left: 9px; top: 6px;
+  width: 6px; height: 11px;
+  border: solid var(--white); border-width: 0 2px 2px 0;
+  transform: rotate(45deg);
+}
+
+/* FAQ — gem-labelled cards (2×2), distinct from the accordion on faq.html */
+#l1-faq { padding: 120px 0; background: var(--black); border-top: 1px solid rgba(255,255,255,0.06); }
+.l1-faq-head { text-align: center; margin-bottom: 56px; }
+.l1-faq-headline {
+  font-family: var(--display);
+  font-size: clamp(36px, 4.5vw, 62px);
+  line-height: 0.98; letter-spacing: 1px;
+}
+.l1-faq-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 20px; }
+.l1-gem-card {
+  background: var(--dark-gray);
+  border: 1px solid rgba(255,255,255,0.08);
+  border-radius: 4px; padding: 32px;
+  transition: border-color 0.2s, transform 0.2s;
+}
+.l1-gem-card:hover { border-color: rgba(212,17,17,0.5); transform: translateY(-2px); }
+.l1-gem-top {
+  display: flex; align-items: center; gap: 10px;
+  padding-bottom: 18px; margin-bottom: 18px;
+  border-bottom: 1px solid rgba(255,255,255,0.08);
+}
+.l1-gem-icon { color: var(--red); font-size: 13px; }
+.l1-gem-name {
+  font-size: 12px; letter-spacing: 2px; text-transform: uppercase;
+  font-weight: 600; color: rgba(245,245,245,0.55);
+}
+.l1-gem-word {
+  margin-left: auto;
+  font-family: var(--display); font-size: 26px; letter-spacing: 1px;
+  color: var(--red); line-height: 1;
+}
+.l1-gem-q { font-size: 18px; font-weight: 600; color: var(--white); line-height: 1.35; margin-bottom: 16px; }
+.l1-gem-a { font-size: 15px; line-height: 1.75; color: rgba(245,245,245,0.6); }
+.l1-gem-list { list-style: none; display: flex; flex-direction: column; gap: 11px; }
+.l1-gem-list li {
+  display: flex; align-items: flex-start; gap: 12px;
+  font-size: 15px; line-height: 1.5; color: rgba(245,245,245,0.7);
+}
+.l1-gem-list li::before {
+  content: ''; flex-shrink: 0; margin-top: 8px;
+  width: 6px; height: 6px; background: var(--red);
+}
+
+/* FINAL CTA — mirrors the index CTA rhythm with its own ghost mark */
+#l1-cta { padding: 150px 0; background: var(--off-black); text-align: center; overflow: hidden; position: relative; }
+#l1-cta::before {
+  content: 'BM'; position: absolute;
+  font-family: var(--display); font-size: 380px;
+  color: rgba(255,255,255,0.015);
+  top: 50%; left: 50%; transform: translate(-50%, -50%);
+  pointer-events: none; letter-spacing: -20px; z-index: 0;
+}
+#l1-cta .container { position: relative; z-index: 1; }
+.l1-cta-tag { margin-bottom: 24px; }
+.l1-cta-headline {
+  font-family: var(--display);
+  font-size: clamp(44px, 6.5vw, 92px);
+  line-height: 0.92; letter-spacing: 1px; margin-bottom: 28px;
+}
+.l1-cta-sub { font-size: 17px; color: rgba(245,245,245,0.55); max-width: 520px; margin: 0 auto 44px; line-height: 1.7; }
+.l1-cta-row { display: flex; justify-content: center; margin-bottom: 32px; }
+.l1-cta-disclaimer { font-size: 12px; color: rgba(245,245,245,0.3); }
+
+/* Hook video eases up and scales in (scoped so the index VSL is untouched). */
+#l1-hook .vsl-video-wrap { transition-property: transform, opacity; transition-duration: .8s, .7s; }
+#l1-hook .vsl-video-wrap.reveal { transform: translateY(32px) scale(0.96); }
+#l1-hook .vsl-video-wrap.reveal.visible { transform: translateY(0) scale(1); }
+
+/* Reduced motion: skip the entrances, show every final state at rest. */
+@media (prefers-reduced-motion: reduce) {
+  .l1-checklist li { opacity: 1 !important; transform: none !important; }
+  .l1-check-svg path { stroke-dashoffset: 0 !important; animation: none !important; }
+  .l1-why-card { transform: none !important; }
+  .l1-mech-body { opacity: 1 !important; transform: none !important; }
+  .l1-mech-steps::after { animation: none !important; }
+  .l1-mech-num { background-color: var(--red) !important; color: var(--white) !important; animation: none !important; }
+  #l1-hook .vsl-video-wrap.reveal { transform: none; }
+}
+
 /* RESPONSIVE */
 @media (max-width: 900px) {
   .navbar { padding: 16px 24px; }
@@ -619,6 +925,37 @@ footer { background: var(--off-black); border-top: 1px solid rgba(255,255,255,0.
   .faq-left-headline, .faq-left-sub { position: static; }
   #faq.faq-page { padding-top: 140px; }
   #final-cta::before { font-size: 180px; }
+
+  /* LANDING 1 */
+  #l1-hero { padding: 130px 0 80px; }
+  .l1-recognize-inner { grid-template-columns: 1fr; gap: 40px; }
+  .l1-recognize-headline { position: static; }
+  .l1-why-grid { grid-template-columns: 1fr; }
+  /* Steps stack: connect number-to-number so the rail starts at num 1 and
+     ends exactly at num 3 — the last step draws no outgoing segment, so the
+     line can't run past the third circle no matter how the copy wraps. */
+  .l1-mech-steps { grid-template-columns: 1fr; gap: 36px; }
+  .l1-mech-step { text-align: left; }
+  .l1-mech-num { margin: 0 0 24px; }
+  /* Drop the container-spanning rail used on desktop. */
+  .l1-mech-steps::before, .l1-mech-steps::after { display: none; }
+  /* Each connector runs from its number's centre (top:28px) down to the next
+     number's centre: 100% (this step's height) + 36px (the grid gap) lands
+     dead on it. z-index:-1 keeps it behind the copy, like the desktop rail. */
+  .l1-mech-step:not(:last-child)::before,
+  .l1-mech-step:not(:last-child)::after {
+    content: ''; position: absolute; left: 28px; top: 28px; width: 2px; z-index: -1;
+  }
+  .l1-mech-step:not(:last-child)::before { height: calc(100% + 36px); background: rgba(255,255,255,0.14); }
+  .l1-mech-step:not(:last-child)::after  { height: 0; background: var(--red); }
+  /* Fill segment 1 (num1→num2) over 0–0.7s, segment 2 (num2→num3) over 0.7–1.4s,
+     matching the circles lighting at 0s / 0.7s / 1.4s. */
+  .l1-mech-steps.visible .l1-mech-step:nth-child(1)::after { animation: l1-mech-fill-seg .7s linear forwards; animation-delay: 0s; }
+  .l1-mech-steps.visible .l1-mech-step:nth-child(2)::after { animation: l1-mech-fill-seg .7s linear forwards; animation-delay: .7s; }
+  @keyframes l1-mech-fill-seg { to { height: calc(100% + 36px); } }
+  .l1-outcomes-inner { grid-template-columns: 1fr; gap: 32px; }
+  .l1-faq-grid { grid-template-columns: 1fr; }
+  #l1-cta::before { font-size: 170px; }
 }
 @media (max-width: 600px) {
   /* The drawer carries the CTA at this size, so the bar drops it. */
