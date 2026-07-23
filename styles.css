@@ -879,6 +879,75 @@ footer { background: var(--off-black); border-top: 1px solid rgba(255,255,255,0.
 .l1-cta-row { display: flex; justify-content: center; margin-bottom: 32px; }
 .l1-cta-disclaimer { font-size: 12px; color: rgba(245,245,245,0.3); }
 
+/* IMMEDIATE PROOF (transformations) — sits right under the hero. */
+#l1-proof { padding: 100px 0; background: var(--off-black); border-top: 1px solid rgba(255,255,255,0.06); }
+.l1-proof-head { text-align: center; margin-bottom: 52px; }
+.l1-proof-headline { font-family: var(--display); font-size: clamp(32px, 4vw, 54px); line-height: 0.98; letter-spacing: 1px; margin-bottom: 16px; }
+.l1-proof-headline em { font-style: normal; color: var(--red); }
+.l1-proof-sub { font-size: 16px; line-height: 1.7; color: rgba(245,245,245,0.55); max-width: 640px; margin: 0 auto; }
+.l1-proof-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 20px; }
+.l1-proof-card { background: var(--dark-gray); border: 1px solid rgba(255,255,255,0.08); border-radius: 4px; overflow: hidden; display: flex; flex-direction: column; }
+/* Before / after photo pair. Swap each .img-placeholder for <img class="l1-ba-img">. */
+.l1-proof-media { position: relative; display: grid; grid-template-columns: 1fr 1fr; gap: 2px; }
+/* Timeline variant (Sanela): front + back shown together, cycling through stages.
+   The stage pill sits centred at the top and crossfades with the photos. */
+.l1-proof-stages { position: absolute; top: 10px; left: 50%; transform: translateX(-50%); z-index: 3; pointer-events: none; }
+.l1-proof-stage {
+  position: absolute; top: 0; left: 50%; transform: translateX(-50%);
+  white-space: nowrap; opacity: 0; transition: opacity .5s ease;
+  background: var(--red); color: var(--white);
+  font-size: 11px; letter-spacing: .5px; text-transform: uppercase; font-weight: 600;
+  padding: 5px 12px; border-radius: 2px;
+}
+.l1-proof-stage.active { opacity: 1; }
+.l1-ba { position: relative; margin: 0; aspect-ratio: 3 / 4; overflow: hidden; background: var(--mid-gray); }
+/* Front / back / side frames are stacked; JS crossfades one at a time, kept in
+   sync with the matching frame in the other half (same pose shown together). */
+.l1-ba-frame { position: absolute; inset: 0; opacity: 0; transition: opacity .6s ease; }
+.l1-ba-frame.active { opacity: 1; }
+.l1-ba-frame .img-placeholder { position: absolute; inset: 0; }
+.l1-ba-img { position: absolute; inset: 0; display: block; width: 100%; height: 100%; object-fit: cover; }
+/* Some "after" photos (e.g. Dragica) were shot further back; zoom them in to
+   match the tighter framing of the "before" photos. Tune the scale to taste. */
+.l1-ba-zoom .l1-ba-img { transform: scale(1.45); transform-origin: center 40%; }
+.l1-ba-tag { position: absolute; left: 10px; top: 10px; z-index: 2; font-size: 10px; letter-spacing: 1.5px; text-transform: uppercase; font-weight: 600; padding: 4px 9px; border-radius: 2px; background: rgba(11,11,11,0.82); color: rgba(245,245,245,0.75); }
+.l1-ba-tag--after { background: var(--red); color: var(--white); }
+.l1-proof-body { padding: 22px 24px 26px; display: flex; flex-direction: column; flex: 1; }
+.l1-proof-body .testi-stars { margin-bottom: 12px; }
+.l1-proof-quote { font-size: 14px; line-height: 1.7; color: rgba(245,245,245,0.78); font-style: italic; margin-bottom: 16px; flex: 1; }
+.l1-proof-name { font-size: 14px; font-weight: 600; color: var(--white); }
+.l1-proof-meta { font-size: 11px; letter-spacing: 1px; text-transform: uppercase; color: var(--red); margin-top: 3px; }
+.l1-proof-close { text-align: center; margin-top: 46px; font-family: var(--display); font-size: clamp(24px, 3vw, 40px); letter-spacing: 1px; color: var(--white); }
+.l1-proof-close em { font-style: normal; color: var(--red); }
+
+/* MID CTA — a lighter conversion band right after the VSL. */
+#l1-midcta { padding: 72px 0; background: var(--black); border-top: 1px solid rgba(255,255,255,0.06); }
+.l1-midcta-inner {
+  display: flex; align-items: center; justify-content: space-between; gap: 40px; flex-wrap: wrap;
+  background: linear-gradient(135deg, rgba(212,17,17,0.14), rgba(212,17,17,0.03));
+  border: 1px solid rgba(212,17,17,0.25); border-radius: 6px;
+  padding: clamp(28px, 4vw, 44px);
+}
+.l1-midcta-copy { flex: 1; min-width: 260px; }
+.l1-midcta-headline { font-family: var(--display); font-size: clamp(28px, 3.2vw, 44px); line-height: 1; letter-spacing: 1px; margin-bottom: 10px; }
+.l1-midcta-headline em { font-style: normal; color: var(--red); }
+.l1-midcta-sub { font-size: 15px; color: rgba(245,245,245,0.62); line-height: 1.6; }
+.l1-midcta-inner .btn-primary { flex-shrink: 0; }
+
+/* ABOUT / AUTHORITY — trainer bio + credibility, before the FAQ. */
+#l1-about { padding: 120px 0; background: var(--black); border-top: 1px solid rgba(255,255,255,0.06); }
+.l1-about-inner { display: grid; grid-template-columns: 0.85fr 1.15fr; gap: 64px; align-items: start; }
+.l1-about-visual { position: sticky; top: 100px; }
+.l1-about-img { border-radius: 4px; overflow: hidden; border: 1px solid rgba(255,255,255,0.08); position: relative; }
+.l1-about-img::after { content: ''; position: absolute; inset: 0; box-shadow: inset 0 -80px 60px -40px rgba(11,11,11,0.7); pointer-events: none; }
+.l1-about-img-photo { display: block; width: 100%; height: auto; aspect-ratio: 4 / 5; object-fit: cover; object-position: center 22%; }
+.l1-about-headline { font-family: var(--display); font-size: clamp(32px, 3.8vw, 54px); line-height: 0.98; letter-spacing: 1px; margin-bottom: 24px; }
+.l1-about-headline em { font-style: normal; color: var(--red); }
+.l1-about-chips { display: flex; flex-wrap: wrap; gap: 10px; margin-bottom: 30px; }
+.l1-about-chip { font-size: 12px; letter-spacing: 0.4px; color: rgba(245,245,245,0.8); background: var(--dark-gray); border: 1px solid rgba(255,255,255,0.1); border-left: 2px solid var(--red); border-radius: 2px; padding: 8px 14px; }
+.l1-about-text p { font-size: 15px; line-height: 1.8; color: rgba(245,245,245,0.62); margin-bottom: 18px; }
+.l1-about-quote { font-family: var(--display); font-size: clamp(22px, 2.4vw, 30px); line-height: 1.2; letter-spacing: 0.5px; color: var(--white); border-left: 3px solid var(--red); padding: 4px 0 4px 22px; margin: 28px 0; }
+
 /* Hook video eases up and scales in (scoped so the index VSL is untouched). */
 #l1-hook .vsl-video-wrap { transition-property: transform, opacity; transition-duration: .8s, .7s; }
 #l1-hook .vsl-video-wrap.reveal { transform: translateY(32px) scale(0.96); }
@@ -928,6 +997,10 @@ footer { background: var(--off-black); border-top: 1px solid rgba(255,255,255,0.
 
   /* LANDING 1 */
   #l1-hero { padding: 130px 0 80px; }
+  .l1-proof-grid { grid-template-columns: 1fr; max-width: 420px; margin: 0 auto; }
+  .l1-midcta-inner { flex-direction: column; align-items: flex-start; }
+  .l1-about-inner { grid-template-columns: 1fr; gap: 40px; }
+  .l1-about-visual { position: static; max-width: 360px; }
   .l1-recognize-inner { grid-template-columns: 1fr; gap: 40px; }
   .l1-recognize-headline { position: static; }
   .l1-why-grid { grid-template-columns: 1fr; }

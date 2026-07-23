@@ -103,6 +103,36 @@ const T = {
     l1_hook_headline: 'Pogledaj ovo<br><em>prije svega ostalog.</em>',
     l1_hook_sub: 'U 30 sekundi ti objasnim zašto dosad nije išlo i što u mom pristupu radimo drugačije.',
     l1_hook_video_label: 'Video, prvih 30 sekundi<br>Benjamin Matošević',
+    l1_proof_headline: '60+ žena krenulo je istim putem,<br><em>a ovo su njihove promjene.</em>',
+    l1_proof_sub: 'Nisu tražile još jednu dijetu, tražile su način koji mogu održati.',
+    l1_proof_before: 'Prije',
+    l1_proof_after: 'Poslije',
+    l1_pose_front: 'Sprijeda',
+    l1_pose_back: 'Straga',
+    l1_pose_side: 'Sa strane',
+    l1_stage_0: 'Početak',
+    l1_stage_3: '3 mjeseca · −11 kg',
+    l1_stage_4: '4 mjeseca · −13 kg',
+    l1_proof_q_sanela: '"Prvi put osjećam da promjena ostaje. Nije dijeta, nego novi način života."',
+    l1_proof_m_sanela: '−13 kg · 4 mjeseca',
+    l1_proof_q_ivana: '"Dvoje djece, puno posla, nula vremena. Benjamin je sve složio oko mog stvarnog života."',
+    l1_proof_m_ivana: '−17 kg · 4,5 mjeseca',
+    l1_proof_q_dragica: '"Mislila sam da je s 40+ kasno. Danas sam jača i sigurnija nego ikad."',
+    l1_proof_m_dragica: '−18 kg · 3 mjeseca',
+    l1_proof_close: 'Ako je krenulo njima, <em>možda je moguće i tebi.</em>',
+    l1_midcta_headline: 'Osjećaš da je ovo <em>napokon pravi put?</em>',
+    l1_midcta_sub: 'Ispuni kratku prijavu i javljam ti se osobno. Bez pritiska, bez obveze.',
+    l1_about_img_alt: 'Benjamin Matošević, online trener i mentor',
+    l1_about_headline: 'Tko sam ja i zašto sam <em>posvetio život ovome?</em>',
+    l1_about_chip1: '8 godina u fitnessu',
+    l1_about_chip2: 'Student kineziologije',
+    l1_about_chip3: 'Obiteljska trenerska tradicija 30+ god.',
+    l1_about_p1: 'Ja sam Benjamin Matošević, online trener i mentor te student Kineziološkog fakulteta u Zagrebu. Fitnessom se bavim već 8 godina, a kroz taj period konstantno sam ulagao u svoje znanje kroz različite edukacije i certifikate povezane s treningom, kretanjem i radom s klijentima.',
+    l1_about_p2: 'Moji prvi temelji u fitnessu nisu nastali preko noći. Od malih nogu učio sam od svog oca, koji je više od 30 godina radio kao trener, i upravo kroz njega razvio sam poštovanje prema pravilnom treningu, disciplini i stvarnom radu s ljudima.',
+    l1_about_p3: 'Danas svoj pristup gradim na spoju znanja iz kineziologije, iskustva iz prakse i razumijevanja da svaka osoba ima drugačiji život, obaveze i prepreke.',
+    l1_about_quote: 'Vjerujem da problem većine ljudi nije nedostatak informacija. Danas svi znaju da trebaju trenirati i jesti bolje.',
+    l1_about_p4: 'Problem je što nemaju sustav koji mogu pratiti kada dođu stres, posao, obaveze i dani kada motivacija nestane.',
+    l1_about_p5: 'Zato moj cilj nije dati ti još jedan plan koji će završiti spremljen u mobitelu. Moj cilj je voditi te kroz proces, pomoći ti izgraditi održive navike i pokazati ti da promjena tijela ne mora biti još jedan kratki pokušaj, nego nešto što možeš zadržati cijeli život.',
     l1_rec_tag: 'Možda se prepoznaješ',
     l1_rec_headline: 'Ako kimaš glavom<br>na barem jedno,<br><em>na pravom si mjestu.</em>',
     l1_rec_1: 'Kažeš „od ponedjeljka krećem" češće nego što želiš priznati.',
@@ -266,6 +296,36 @@ const T = {
     l1_hook_headline: 'Watch this<br><em>before anything else.</em>',
     l1_hook_sub: 'In 30 seconds I explain why it hasn\'t worked so far and what my approach does differently.',
     l1_hook_video_label: 'Video, the first 30 seconds<br>Benjamin Matošević',
+    l1_proof_headline: '60+ women have walked this same path,<br><em>and these are their changes.</em>',
+    l1_proof_sub: 'They weren\'t looking for another diet, but for a way they could actually keep.',
+    l1_proof_before: 'Before',
+    l1_proof_after: 'After',
+    l1_pose_front: 'Front',
+    l1_pose_back: 'Back',
+    l1_pose_side: 'Side',
+    l1_stage_0: 'Start',
+    l1_stage_3: '3 months · −11 kg',
+    l1_stage_4: '4 months · −13 kg',
+    l1_proof_q_sanela: '"For the first time the change is sticking. It\'s not a diet, it\'s a new way of living."',
+    l1_proof_m_sanela: '−13 kg · 4 months',
+    l1_proof_q_ivana: '"Two kids, a full workload, zero time. Benjamin built everything around my real life."',
+    l1_proof_m_ivana: '−17 kg · 4.5 months',
+    l1_proof_q_dragica: '"I thought after 40 it was too late. Today I\'m stronger and more confident than ever."',
+    l1_proof_m_dragica: '−18 kg · 3 months',
+    l1_proof_close: 'If it worked for them, <em>maybe it\'s possible for you too.</em>',
+    l1_midcta_headline: 'Feel like this is <em>finally the right approach?</em>',
+    l1_midcta_sub: 'Fill out the short application and I\'ll get back to you personally. No pressure, no obligation.',
+    l1_about_img_alt: 'Benjamin Matošević, online trainer and mentor',
+    l1_about_headline: 'Who I am and why I\'ve <em>dedicated my life to this.</em>',
+    l1_about_chip1: '8 years in fitness',
+    l1_about_chip2: 'Kinesiology student',
+    l1_about_chip3: '30+ yrs of family coaching heritage',
+    l1_about_p1: 'I\'m Benjamin Matošević, an online trainer and mentor, and a student at the Faculty of Kinesiology in Zagreb. I\'ve been in fitness for 8 years, and throughout that time I\'ve constantly invested in my knowledge through various courses and certifications related to training, movement and working with clients.',
+    l1_about_p2: 'My foundations in fitness didn\'t appear overnight. From an early age I learned from my father, who worked as a trainer for over 30 years, and it was through him that I developed respect for proper training, discipline and real work with people.',
+    l1_about_p3: 'Today I build my approach on a blend of knowledge from kinesiology, hands-on experience, and the understanding that every person has a different life, obligations and obstacles.',
+    l1_about_quote: 'I believe most people\'s problem isn\'t a lack of information. Everyone today knows they should train and eat better.',
+    l1_about_p4: 'The problem is they don\'t have a system they can follow when stress, work, obligations and the days when motivation disappears all show up.',
+    l1_about_p5: 'That\'s why my goal isn\'t to hand you another plan that ends up saved on your phone. My goal is to guide you through the process, help you build sustainable habits, and show you that changing your body doesn\'t have to be just another short attempt, but something you can keep for life.',
     l1_rec_tag: 'Maybe You Recognize Yourself',
     l1_rec_headline: 'If you\'re nodding<br>at even one,<br><em>you\'re in the right place.</em>',
     l1_rec_1: 'You say "I\'ll start Monday" more often than you\'d like to admit.',
@@ -415,6 +475,27 @@ const observer = new IntersectionObserver((entries) => {
   entries.forEach(e => { if (e.isIntersecting) e.target.classList.add('visible'); });
 }, { threshold: 0.12 });
 document.querySelectorAll('.reveal').forEach(el => observer.observe(el));
+
+// ── BEFORE / AFTER ROTATION (landing1 proof cards)
+// Each card cycles front → back → side every 3s. The two halves (before/after)
+// share one index, so the matching pose is always shown on both at once.
+// Empty on other pages; skipped for visitors who prefer reduced motion.
+if (!window.matchMedia('(prefers-reduced-motion: reduce)').matches) {
+  document.querySelectorAll('.l1-proof-card').forEach(card => {
+    const frameSets = [...card.querySelectorAll('.l1-ba')].map(h => h.querySelectorAll('.l1-ba-frame'));
+    if (!frameSets.length) return;
+    // Timeline cards (e.g. Sanela) carry stage pills that advance with the photos.
+    const stages = card.querySelectorAll('.l1-proof-stage');
+    const count = Math.min(...frameSets.map(f => f.length));
+    if (count < 2) return; // nothing to rotate
+    let i = 0;
+    setInterval(() => {
+      i = (i + 1) % count;
+      frameSets.forEach(frames => frames.forEach((f, idx) => f.classList.toggle('active', idx === i)));
+      stages.forEach((s, idx) => s.classList.toggle('active', idx === i));
+    }, 3000);
+  });
+}
 
 // ── PARALLAX
 // Backdrop layers travel further than the page scrolls, so they read as moving
